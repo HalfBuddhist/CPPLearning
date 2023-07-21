@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/plugins/**",
+                "${workspaceFolder}/plugins/*/*",
+                "${workspaceFolder}/plugins/*/*/*",
+                "${workspaceFolder}/plugins/cublas/tests/build/_deps/googletest-src/googletest/include",
+                "/usr/include",
+                "/usr/include/c++/7",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/x86_64-linux-gnu/sys",
+                "/usr/include/x86_64-linux-gnu/c++/7",
+                "/usr/include/c++/7/backward",
+                "/usr/lib/gcc/x86_64-linux-gnu/7/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+                "/usr/local/include",
+                "/usr/local/cuda/include/",
+                "/usr/local/cuda/samples/common/inc",
+                "${default}"
+            ],
+            "defines": [],
+            // "browse": {
+            //     "path": [
+            //         "/usr/include"
+            //     ]
+            // },
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
