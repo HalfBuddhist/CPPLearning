@@ -1,2 +1,3 @@
-# Clion
-OJ solutions and basic algorithms and syntax testing on C/C++.
+## CPP Learning
+
+Syntax and package testing for C/C++.

@@ -1,29 +1,40 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C/C++",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            "name": "(gdb) Launch C/C++",
+            "type": "cppdbg", //配置类型，只能为 cppdbg
+            "request": "launch", //请求配置类型，可以为launch（启动）或attach（附加）
+            // "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/out/${fileBasenameNoExtension}", //调试程序的路径名称
+            "args": [], //调试传递参数
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}", // "${fileDirname}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": false, //true显示外置的控制台窗口，false显示内置终端; windows 为 true, linux-为 false;
             "MIMode": "gdb",
-            "preLaunchTask": "compile",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "C/C++: g++ build active file", //调试前执行的任务，就是之前配置的tasks.json中的label字段
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
                 }
             ]
         },
         {
-            "name": "(gdb) Launch",
+            "name": "(gdb) Launch nvcc",
             "type": "cppdbg",
+            "preLaunchTask": "nvcc build",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.out",
             "args": [],
@@ -31,12 +42,17 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
-            "preLaunchTask": "build",
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ]

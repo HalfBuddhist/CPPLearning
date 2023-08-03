@@ -20,6 +20,7 @@
                 "/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
                 "/usr/local/include",
                 "/usr/local/cuda/include/",
+                "/usr/local/cuda/targets/x86_64-linux/include",
                 "/usr/local/cuda/samples/common/inc",
                 "${default}"
             ],
